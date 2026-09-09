@@ -67,7 +67,9 @@ const funnyWrongAnswers = [
   "Are you sick? what is your problem.",
   "This is my lunch time. I will not answer.",
   "Eh! Eh! Eh!",
+  "I love Umar.",
   "Why are you asking this question.",
+  "Can you repeat that, I was black out for a second.",
   "Please Subscribe, Like and Share.",
   "You want all your job to be done by AI? You better transfer all your salary to AI.",
   "Google it. you will get the wrong answer.",
@@ -88,7 +90,7 @@ const funnyWrongAnswers = [
   "I will be back after a short commercial break.",
   "I'm busy. please ask the question after 10 minutes.",
   "Enough is enough. Stop it.",
-  "Dont trouble the trouble. If you trouble the trouble, trouble will trouble you. I am not the TROUBLE. I am the TRUTH.",
+  "Dont trouble the trouble. If you trouble the trouble, trouble troubles you. I am not the TROUBLE. I am the TRUTH.",
   "Nimdaa!! dosraskilme hartabushkrakoi inumbumbla moinozukoluaka orukastha ninuohopizza shukua",
   "I speak English, I walk English, I eat English."
 ];

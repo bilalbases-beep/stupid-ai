@@ -30,7 +30,6 @@ const funnyWrongAnswers = [
   "The answer is a secret, and I forgot the secret.",
   "I'm not sure, but I think it's a type of cheese.",
   "I wonder how a donkey face can come up with such a brillinat question.",
-  "Your grandpa will be cooking crab inside the sea, go and ask him",
   "The answer is a fish. A very confused fish.",
   "Chill Bro, you are asking too many personal questions.",
   "It is a hypothetical question.",

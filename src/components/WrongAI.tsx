@@ -37,6 +37,8 @@ const funnyWrongAnswers = [
   "Let me ask Claude.",
   "Let me ask ChatGPT",
   "Let me ask Grok",
+  "I think you're brain have stopped braining.",
+  "The actual thing is either this or that. if it is this, then it will not be that. if it is that, then it will not be this. I hope you understood. which type of answers do you prefer. this or that?",
   "Let me ask Gemini.",
   "Narendra Modi.",
   "I think it is Jackie Chan",

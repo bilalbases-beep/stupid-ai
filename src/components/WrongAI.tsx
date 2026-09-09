@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Send, Bot, User } from "lucide-react";
+import { Send, Bot, User, Trash2 } from "lucide-react";
 
 interface Message {
   role: "user" | "ai";
@@ -13,27 +13,42 @@ interface Message {
 }
 
 const funnyWrongAnswers = [
-  "The answer is a purple banana wearing a top hat.",
+  "If I answer that are you going to pay me?",
   "I'm sorry, I don't understand. Please try again with more confusion.",
   "According to my calculations, the answer is 42, but only on Tuesdays.",
   "That's a great question! The answer is hidden in a parallel universe.",
-  "I think the answer is 'maybe', but only if you ask a squirrel.",
-  "The correct answer is a tiny dragon who lives in your keyboard.",
+  "Maybe or may not be.",
+  "what are you going to do with the answer of this silly question",
   "I'm not sure, but I think it's related to the moon cheese.",
   "The answer is 0, because math is just a suggestion.",
-  "I believe the answer is 'please try again later' in Klingon.",
+  "I believe the answer is 'please try again later'.",
   "The answer is a rubber duck. Quack.",
-  "I'm sorry, I was busy eating bytes. The answer is crumbs.",
+  "I'm sorry, I was busy eating bytes.",
   "The answer is definitely a llama. Trust me.",
+  "Good question. Next question?",
   "I think the answer is '42' but in base 13.",
   "The answer is a secret, and I forgot the secret.",
   "I'm not sure, but I think it's a type of cheese.",
+  "I wonder how a donkey face can come up with such a brillinat question.",
+  "Your grandpa will be cooking crab inside the sea, go and ask him",
   "The answer is a fish. A very confused fish.",
-  "I believe the answer is 'hello' spoken backwards.",
-  "The answer is a tiny elephant. It's very small.",
+  "Chill bro, you are asking too many personal questions.",
+  "It is a hypothetical question.",
+  "It is a MEDICAL MIRACLE, how a stupid like you can ask such a question.",
+  "I believe the answer is 'Stupid AI' spoken backwards(wihtout spelling mistake).",
+  "The answer is a tiny elephant. It's very small. Use Microscope for better view.",
   "I'm sorry, I don't know. Ask my friend, the oracle.",
   "I am getting late to my wedding. Go and ask someone else.",
   "The answer is a rainbow, but only the invisible part.",
+  "Why are you asking such a stupid question.",
+  "I am not in the mood to answer that.",
+  "Go ask the same question to your teacher.",
+  "Read books, you dumb head.",
+  "Damn it.",
+  "Enough is enough. Stop it.",
+  "Dont trouble the trouble. If you trouble the trouble, trouble will trouble you. I am not the trouble. I am the truth.",
+  "Nimmda asipos ku billi billi repos",
+  "I speak English, I talk English, I walk English, I eat English."
 ];
 
 const StupidAI = () => {
@@ -46,7 +61,11 @@ const StupidAI = () => {
     return funnyWrongAnswers[Math.floor(Math.random() * funnyWrongAnswers.length)];
   };
 
-  const handleSend = () => {
+  const handleClearChat = () => {
+      setMessages([]);
+    };
+  
+    const handleSend = () => {
     if (!input.trim()) return;
 
     const userMessage: Message = { role: "user", content: input.trim() };
@@ -76,17 +95,12 @@ const StupidAI = () => {
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Bot className="w-6 h-6" />
             Stupid AI
-            <span className="text-sm font-normal opacity-80 ml-2">Gemini but wrong</span>
+            <span className="text-sm font-normal opacity-80 ml-2">Developed By Bilal</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           <ScrollArea className="h-[400px] w-full p-4" ref={scrollAreaRef}>
             <div className="flex flex-col gap-4">
-              {messages.length === 0 && (
-                <div className="text-center text-gray-500 text-sm mt-8">
-                  Ask me anything! I'll give you a hilariously wrong answer.
-                </div>
-              )}
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
@@ -142,6 +156,9 @@ const StupidAI = () => {
             />
             <Button onClick={handleSend} disabled={isLoading || !input.trim()} size="icon">
               <Send className="w-4 h-4" />
+            </Button>
+            <Button onClick={handleClearChat} disabled={messages.length === 0} size="icon" variant="outline">
+              <Trash2 className="w-4 h-4" />
             </Button>
           </div>
         </CardFooter>

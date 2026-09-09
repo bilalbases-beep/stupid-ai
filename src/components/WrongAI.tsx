@@ -32,6 +32,7 @@ const funnyWrongAnswers = [
   "Lets talk about something else.",
   "I accidently switched ON the camera, you look beautiful.",
   "Beyond infinity..........",
+  "Installing Intelligence...",
   "P.Sherman, 42, Wallaby Way, Syndey.",
   "I am not HULK. but I am always ANGRY. Change your question.",
   "Thank you for the compliments.",

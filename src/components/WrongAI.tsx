@@ -30,6 +30,7 @@ const funnyWrongAnswers = [
   "I dont know.",
   "I know. I know. I know.",
   "Lets talk about something else.",
+  "I accidently switched ON the camera, you look beautiful.",
   "Beyond infinity..........",
   "P.Sherman, 42, Wallaby Way, Syndey.",
   "I am not HULK. but I am always ANGRY. Change your question.",
@@ -86,7 +87,7 @@ const funnyWrongAnswers = [
   "I will be back after a short commercial break.",
   "I'm busy. please ask the question after 10 minutes.",
   "Enough is enough. Stop it.",
-  "Dont trouble the trouble. If you trouble the trouble, trouble will trouble you. I am not the trouble. I am the truth.",
+  "Dont trouble the trouble. If you trouble the trouble, trouble will trouble you. I am not the TROUBLE. I am the TRUTH.",
   "Nimdaa!! dosraskilme hartabushkrakoi inumbumbla moinozukoluaka orukastha ninuohopizza shukua",
   "I speak English, I walk English, I eat English."
 ];

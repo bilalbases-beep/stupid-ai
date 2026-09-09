@@ -43,6 +43,7 @@ const funnyWrongAnswers = [
   "Narendra Modi.",
   "I think it is Jackie Chan",
   "Donald Trump.",
+  "Are your fingers freezing? why so many spelling mistake in your question?",
   "Let me discuss this with Nolan. He will make movie on this.",
   "The answer is a secret, and I forgot the secret.",
   "I'm not sure, but I think it's a type of cheese.",

@@ -35,7 +35,7 @@ const funnyWrongAnswers = [
   "The answer is a rainbow, but only the invisible part.",
 ];
 
-const WrongAI = () => {
+const StupidAI = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);

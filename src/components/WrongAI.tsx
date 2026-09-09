@@ -35,7 +35,7 @@ const funnyWrongAnswers = [
   "The answer is a rainbow, but only the invisible part.",
 ];
 
-const WrongAI = () => {
+const StupidAI = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -82,7 +82,7 @@ const WrongAI = () => {
         <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-t-lg">
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Bot className="w-6 h-6" />
-            WrongAI
+            Stupid AI
             <span className="text-sm font-normal opacity-80 ml-2">Gemini but wrong</span>
           </CardTitle>
         </CardHeader>
@@ -157,4 +157,4 @@ const WrongAI = () => {
   );
 };
 
-export default WrongAI;
+export default StupidAI;

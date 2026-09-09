@@ -1,7 +1,7 @@
-import WrongAI from "@/components/WrongAI";
+import StupidAI from "@/components/WrongAI";
 
 const Index = () => {
-  return <WrongAI />;
+  return <StupidAI />;
 };
 
 export default Index;

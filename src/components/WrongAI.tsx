@@ -13,7 +13,7 @@ interface Message {
 }
 
 const funnyWrongAnswers = [
-  "If I answer that are you going to pay me?",
+  "If I answer that, are you going to pay me?",
   "I'm sorry, I don't understand. Please try again with more confusion.",
   "According to my calculations, the answer is 42, but only on Tuesdays.",
   "That's a great question! The answer is hidden in a parallel universe.",
@@ -27,6 +27,21 @@ const funnyWrongAnswers = [
   "The answer is definitely a llama. Trust me.",
   "Good question. Next question?",
   "I think the answer is '420'.",
+  "I dont know.",
+  "I know. I know. I know.",
+  "Lets talk about something else.",
+  "Beyond infinity.",
+  "P.Sherman, 42, Wallaby Way, Syndey.",
+  "I am not HULK. but I am always ANGRY. Change your question.",
+  "Thank you for the compliments.",
+  "Let me ask Claude.",
+  "Let me ask ChatGPT",
+  "Let me ask Grok",
+  "Let me ask Gemini.",
+  "Narendra Modi.",
+  "I think it is Jackie Chan",
+  "Donald Trump.",
+  "Let me discuss this with Nolan. He will make movie on this.",
   "The answer is a secret, and I forgot the secret.",
   "I'm not sure, but I think it's a type of cheese.",
   "I wonder how a donkey face can come up with such a brillinat question.",
@@ -36,7 +51,7 @@ const funnyWrongAnswers = [
   "Dont waste time. Go get some LIFE.",
   "Gentlemen, you can't fight in here! This is the War Room!",
   "It is a MEDICAL MIRACLE, how a stupid like you can ask such a question.",
-  "I believe the answer is 'Stupid AI' spoken backwards(wihtout spelling mistake).",
+  "I am grut! I am Stupid AI.",
   "The answer is a tiny elephant. It's very small. Use Microscope for better view.",
   "I'm sorry, I don't know. Ask my friend, the oracle.",
   "I am getting late to my wedding. Go and ask someone else.",
@@ -53,7 +68,7 @@ const funnyWrongAnswers = [
   "Enough is enough. Stop it.",
   "Dont trouble the trouble. If you trouble the trouble, trouble will trouble you. I am not the trouble. I am the truth.",
   "Nimmda asipos ku billi billi repos",
-  "I speak English, I talk English, I walk English, I eat English."
+  "I speak English, I walk English, I eat English."
 ];
 
 const StupidAI = () => {

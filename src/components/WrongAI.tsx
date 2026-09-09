@@ -43,17 +43,7 @@ const StupidAI = () => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const generateWrongAnswer = (question: string): string => {
-    const baseAnswer = funnyWrongAnswers[Math.floor(Math.random() * funnyWrongAnswers.length)];
-    const templates = [
-      `Regarding "${question}": ${baseAnswer}`,
-      `I've analyzed "${question}". The answer is ${baseAnswer.toLowerCase()}`,
-      `After deep thought (and a nap), here's the answer to "${question}": ${baseAnswer}`,
-      `The universe whispers: "${question}" is actually ${baseAnswer.toLowerCase()}`,
-      'I am getting late, please ask someone else',
-      `I'm 99% sure that "${question}" equals ${baseAnswer}. The 1% is a typo.`,
-
-    ];
-    return templates[Math.floor(Math.random() * templates.length)];
+    return funnyWrongAnswers[Math.floor(Math.random() * funnyWrongAnswers.length)];
   };
 
   const handleSend = () => {

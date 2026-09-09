@@ -32,6 +32,7 @@ const funnyWrongAnswers = [
   "I believe the answer is 'hello' spoken backwards.",
   "The answer is a tiny elephant. It's very small.",
   "I'm sorry, I don't know. Ask my friend, the oracle.",
+  "I am getting late to my wedding. Go and ask someone else.",
   "The answer is a rainbow, but only the invisible part.",
 ];
 
@@ -48,7 +49,9 @@ const StupidAI = () => {
       `I've analyzed "${question}". The answer is ${baseAnswer.toLowerCase()}`,
       `After deep thought (and a nap), here's the answer to "${question}": ${baseAnswer}`,
       `The universe whispers: "${question}" is actually ${baseAnswer.toLowerCase()}`,
+      'I am getting late, please ask someone else',
       `I'm 99% sure that "${question}" equals ${baseAnswer}. The 1% is a typo.`,
+
     ];
     return templates[Math.floor(Math.random() * templates.length)];
   };

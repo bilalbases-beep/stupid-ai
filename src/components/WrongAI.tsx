@@ -100,22 +100,30 @@ const StupidAI = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const generateWrongAnswer = (question: string): string => {
     return funnyWrongAnswers[Math.floor(Math.random() * funnyWrongAnswers.length)];
   };
 
   const handleClearChat = () => {
-      setMessages([]);
-    };
-  
-    const handleSend = () => {
+    setMessages([]);
+  };
+
+  const focusInput = () => {
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 50);
+  };
+
+  const handleSend = () => {
     if (!input.trim()) return;
 
     const userMessage: Message = { role: "user", content: input.trim() };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
+    focusInput();
 
     // Simulate typing delay
     setTimeout(() => {
@@ -123,6 +131,7 @@ const StupidAI = () => {
       const aiMessage: Message = { role: "ai", content: aiResponse };
       setMessages((prev) => [...prev, aiMessage]);
       setIsLoading(false);
+      focusInput();
     }, 1000 + Math.random() * 1000);
   };
 
@@ -132,6 +141,10 @@ const StupidAI = () => {
     }
   }, [messages]);
 
+  useEffect(() => {
+    focusInput();
+  }, []);
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
       <Card className="w-full max-w-lg shadow-2xl">
@@ -139,7 +152,7 @@ const StupidAI = () => {
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Bot className="w-6 h-6" />
             Stupid AI
-            <span className="text-sm font-normal opacity-80 ml-2">Developed By Bilal</span>
+            <span className="text-sm font-normal opacity-80 ml-2">Developed by Bilal</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
@@ -191,12 +204,14 @@ const StupidAI = () => {
         <CardFooter className="border-t p-4">
           <div className="flex w-full gap-2">
             <Input
+              ref={inputRef}
               placeholder="Ask me anything..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
               disabled={isLoading}
               className="flex-1"
+              autoFocus
             />
             <Button onClick={handleSend} disabled={isLoading || !input.trim()} size="icon">
               <Send className="w-4 h-4" />

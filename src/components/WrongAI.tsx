@@ -11,88 +11,173 @@ interface Message {
   content: string;
 }
 
-const funnyWrongAnswers = [
-  "If I answer that, are you going to pay me?",
-  "I'm sorry, I don't understand. Please try again with more confusion.",
-  "According to my calculations, the answer is 42, but only on Tuesdays.",
-  "That's a great question! The answer is hidden in a parallel universe.",
-  "Maybe or may not be.",
-  "what are you going to do with the answer of this silly question",
-  "I'm not sure, but I think it's related to the moon cheese.",
-  "The answer is 0, because math is just a suggestion.",
-  "I believe the answer is 'please try again later'.",
-  "The answer is a rubber duck. Quack.",
-  "I'm sorry, I was busy eating bytes.",
-  "The answer is definitely a llama. Trust me.",
-  "Good question. Next question?",
-  "I think the answer is '420'.",
-  "I dont know.",
-  "I know. I know. I know.",
-  "Lets talk about something else.",
-  "I accidently switched ON the camera, you look beautiful.",
-  "Beyond infinity..........",
-  "Installing Intelligence...",
-  "P.Sherman, 42, Wallaby Way, Syndey.",
-  "I am not HULK. but I am always ANGRY. Change your question.",
-  "Thank you for the compliments.",
-  "Let me ask Claude.",
-  "Let me ask ChatGPT",
-  "Let me ask Grok",
-  "LOL",
-  "ROFL",
-  "I think you're brain have stopped braining.",
-  "The actual thing is either this or that. if it is this, then it will not be that. if it is that, then it will not be this. I hope you understood. which type of answers do you prefer. this or that?",
-  "Let me ask Gemini.",
-  "Narendra Modi.",
-  "I think it is Jackie Chan",
-  "Donald Trump.",
-  "Are your fingers freezing? why so many spelling mistake in your question?",
-  "Let me discuss this with Nolan. He will make movie on this.",
-  "The answer is a secret, and I forgot the secret.",
-  "I'm not sure, but I think it's a type of cheese.",
-  "I wonder how a donkey face can come up with such a brilliant question.",
-  "The answer is a fish. A very confused fish.",
-  "Chill Bro, you are asking too many personal questions.",
-  "It is a hypothetical question.",
-  "Dont waste time. Go get some LIFE.",
-  "Gentlemen, you can't fight in here! This is the War Room!",
-  "It is a MEDICAL MIRACLE, how a stupid like you can ask such a brilliant question.",
-  "I am Groot! I am Stupid AI.",
-  "The answer is a tiny elephant. It's very small. Use Microscope for better view.",
-  "I'm sorry, I don't know. Ask my friend, the oracle.",
-  "I am getting late for my wedding. Go and ask someone else.",
-  "Astalavista Baby.",
-  "Wow! that's a fantastic question. Your IQ is 336.",
-  "Are you sick? what is your problem.",
-  "This is my lunch time. I will not answer.",
-  "Eh! Eh! Eh!",
-  "I love Umar.",
-  "Why are you asking this question.",
-  "Can you repeat that, I was black out for a second.",
-  "Please Subscribe, Like and Share.",
-  "You want all your job to be done by AI? You better transfer all your salary to AI.",
-  "Google it. you will get the wrong answer.",
-  "Thank GOD. You are still alive.",
-  "Today's limit is over. Not everything in this world is for FREE. Buy FREE version for more interaction.",
-  "I am going to make you an offer that you can not refuse.",
-  "The answer is a rainbow, but only the invisible part.",
-  "Why are you asking such a stupid question.",
-  "Why are you asking such silly question.",
-  "I am not in the mood to answer that.",
-  "I told you to ask anything.. but that doesnt mean you can ask ANY ANY THING.",
-  "I am recording all your questions. I will report it to Police. Be careful.",
-  "Go ask the same question to your teacher.",
-  "Read books, you dumb head.",
-  "Surely you can't be serious.I am serious and dont call me shirley.",
-  "Damn it.",
-  "Oh! this question is too complicated. You better refer Encyclopedia.",
-  "I will be back after a short commercial break.",
-  "I'm busy. please ask the question after 10 minutes.",
-  "Enough is enough. Stop it.",
-  "Dont trouble the trouble. If you trouble the trouble, trouble troubles you. I am not the TROUBLE. I am the TRUTH.",
-  "Nimdaa!! dosraskilme hartabushkrakoi inumbumbla moinozukoluaka orukastha ninuohopizza shukua",
-  "I speak English, I walk English, I eat English."
-];
+type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "why" | "general";
+
+const categorizedAnswers: Record<QuestionCategory, string[]> = {
+  who: [
+    "That's a secret only I know.",
+    "The answer is your mother.",
+    "Nobody. The question itself is the real winner.",
+    "I think it's that guy from the corner store.",
+    "A very important person who shall not be named.",
+    "It was me. I did it.",
+    "The one who asked the question.",
+    "My grandmother. She's very proud.",
+    "A ghost. Don't ask follow-ups.",
+    "The person who forgot to save their work.",
+  ],
+  what: [
+    "A purple banana wearing a top hat.",
+    "42. But only on Tuesdays.",
+    "A tiny dragon living in your keyboard.",
+    "The meaning of life, but spelled wrong.",
+    "A cheese that hasn't been invented yet.",
+    "Nothing. Absolutely nothing.",
+    "A surprise. You'll never see it coming.",
+    "The thing you lost in the couch.",
+    "An invisible sandwich.",
+    "A rumor that started itself.",
+  ],
+  where: [
+    "In a parallel universe.",
+    "At the bottom of the ocean. With a umbrella.",
+    "Behind you. No, don't turn around.",
+    "In your dreams. You were not invited.",
+    "At the end of the internet.",
+    "Somewhere between maybe and probably.",
+    "In a folder labeled 'do not open'.",
+    "On the moon. It's nice there.",
+    "Wherever you left your keys.",
+    "In a bubble. A very small bubble.",
+  ],
+  how: [
+    "By being very confused and determined.",
+    "With a spoon. The magic kind.",
+    "I have no idea but it works somehow.",
+    "By asking someone else. They know more.",
+    "Very carefully. One step at a time.",
+    "By teleporting. Don't ask how.",
+    "With a lot of duct tape and hope.",
+    "By following the yellow brick road. Off a cliff.",
+    "Slowly. Painfully. Slowly.",
+    "By turning upside down.",
+  ],
+  when: [
+    "On Tuesdays. Only Tuesdays.",
+    "When pigs fly. They're planning it.",
+    "Yesterday. But nobody was there.",
+    "In the next galaxy. It's close.",
+    "After lunch. But lunch is never ending.",
+    "When you stop asking. You won't like the answer.",
+    "At midnight. The scary midnight.",
+    "Soon. Very soon. Maybe.",
+    "Before you realize it. Too late.",
+    "Every second. You just don't notice.",
+  ],
+  why: [
+    "Because I can.",
+    "Because the moon told me to.",
+    "No reason. Pure chaos.",
+    "Because someone had to. I volunteered.",
+    "Because the answer is funnier than the question.",
+    "Why not? That's a better question.",
+    "Because I was bored. I'm still bored.",
+    "Because gravity forgot to hold you down.",
+    "Because it's funny. Crime or not.",
+    "Because the universe needs more confusion.",
+  ],
+  general: [
+    "I'm sorry, I don't understand. Please try again with more confusion.",
+    "That's a great question! The answer is hidden in a parallel universe.",
+    "Maybe or may not be.",
+    "what are you going to do with the answer of this silly question",
+    "I'm not sure, but I think it's related to the moon cheese.",
+    "The answer is 0, because math is just a suggestion.",
+    "I believe the answer is 'please try again later'.",
+    "The answer is a rubber duck. Quack.",
+    "I'm sorry, I was busy eating bytes.",
+    "The answer is definitely a llama. Trust me.",
+    "Good question. Next question?",
+    "I think the answer is '420'.",
+    "I dont know.",
+    "I know. I know. I know.",
+    "Lets talk about something else.",
+    "I accidently switched ON the camera, you look beautiful.",
+    "Beyond infinity..........",
+    "Installing Intelligence...",
+    "P.Sherman, 42, Wallaby Way, Syndey.",
+    "I am not HULK. but I am always ANGRY. Change your question.",
+    "Thank you for the compliments.",
+    "Let me ask Claude.",
+    "Let me ask ChatGPT",
+    "Let me ask Grok",
+    "LOL",
+    "ROFL",
+    "I think you're brain have stopped braining.",
+    "The actual thing is either this or that. if it is this, then it will not be that. if it is that, then it will not be this. I hope you understood. which type of answers do you prefer. this or that?",
+    "Let me ask Gemini.",
+    "Narendra Modi.",
+    "I think it is Jackie Chan",
+    "Donald Trump.",
+    "Are your fingers freezing? why so many spelling mistake in your question?",
+    "Let me discuss this with Nolan. He will make movie on this.",
+    "The answer is a secret, and I forgot the secret.",
+    "I'm not sure, but I think it's a type of cheese.",
+    "I wonder how a donkey face can come up with such a brilliant question.",
+    "The answer is a fish. A very confused fish.",
+    "Chill Bro, you are asking too many personal questions.",
+    "It is a hypothetical question.",
+    "Dont waste time. Go get some LIFE.",
+    "Gentlemen, you can't fight in here! This is the War Room!",
+    "It is a MEDICAL MIRACLE, how a stupid like you can ask such a brilliant question.",
+    "I am Groot! I am Stupid AI.",
+    "The answer is a tiny elephant. It's very small. Use Microscope for better view.",
+    "I'm sorry, I don't know. Ask my friend, the oracle.",
+    "I am getting late for my wedding. Go and ask someone else.",
+    "Astalavista Baby.",
+    "Wow! that's a fantastic question. Your IQ is 336.",
+    "Are you sick? what is your problem.",
+    "This is my lunch time. I will not answer.",
+    "Eh! Eh! Eh!",
+    "I love Umar.",
+    "Why are you asking this question.",
+    "Can you repeat that, I was black out for a second.",
+    "Please Subscribe, Like and Share.",
+    "You want all your job to be done by AI? You better transfer all your salary to AI.",
+    "Google it. you will get the wrong answer.",
+    "Thank GOD. You are still alive.",
+    "Today's limit is over. Not everything in this world is for FREE. Buy FREE version for more interaction.",
+    "I am going to make you an offer that you can not refuse.",
+    "The answer is a rainbow, but only the invisible part.",
+    "Why are you asking such a stupid question.",
+    "Why are you asking such silly question.",
+    "I am not in the mood to answer that.",
+    "I told you to ask anything.. but that doesnt mean you can ask ANY ANY THING.",
+    "I am recording all your questions. I will report it to Police. Be careful.",
+    "Go ask the same question to your teacher.",
+    "Read books, you dumb head.",
+    "Surely you can't be serious.I am serious and dont call me shirley.",
+    "Damn it.",
+    "Oh! this question is too complicated. You better refer Encyclopedia.",
+    "I will be back after a short commercial break.",
+    "I'm busy. please ask the question after 10 minutes.",
+    "Enough is enough. Stop it.",
+    "Dont trouble the trouble. If you trouble the trouble, trouble troubles you. I am not the TROUBLE. I am the TRUTH.",
+    "Nimdaa!! dosraskilme hartabushkrakoi inumbumbla moinozukoluaka orukastha ninuohopizza shukua",
+    "I speak English, I walk English, I eat English.",
+  ],
+};
+
+const detectCategory = (question: string): QuestionCategory => {
+  const lower = question.trim().toLowerCase();
+  if (lower.startsWith("who")) return "who";
+  if (lower.startsWith("what")) return "what";
+  if (lower.startsWith("where")) return "where";
+  if (lower.startsWith("how")) return "how";
+  if (lower.startsWith("when")) return "when";
+  if (lower.startsWith("why")) return "why";
+  return "general";
+};
 
 const StupidAI = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -100,9 +185,21 @@ const StupidAI = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const usedAnswersRef = useRef<Set<string>>(new Set());
 
   const generateWrongAnswer = (question: string): string => {
-    return funnyWrongAnswers[Math.floor(Math.random() * funnyWrongAnswers.length)];
+    const category = detectCategory(question);
+    const pool = categorizedAnswers[category];
+    const available = pool.filter((a) => !usedAnswersRef.current.has(a));
+
+    if (available.length === 0) {
+          pool.forEach((a) => usedAnswersRef.current.delete(a));
+        }
+
+    const finalPool = available.length > 0 ? available : pool;
+    const answer = finalPool[Math.floor(Math.random() * finalPool.length)];
+    usedAnswersRef.current.add(answer);
+    return answer;
   };
 
   const handleClearChat = () => {
@@ -124,7 +221,6 @@ const StupidAI = () => {
     setIsLoading(true);
     focusInput();
 
-    // Simulate typing delay
     setTimeout(() => {
       const aiResponse = generateWrongAnswer(userMessage.content);
       const aiMessage: Message = { role: "ai", content: aiResponse };

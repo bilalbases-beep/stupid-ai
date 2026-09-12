@@ -11,7 +11,7 @@ interface Message {
   content: string;
 }
 
-type QuestionCategory = "who" | "what" | "where" | "how" | "how much" | "when" | "why" | "general";
+type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "why" | "general";
 
 const categorizedAnswers: Record<QuestionCategory, string[]> = {
   who: [
@@ -101,9 +101,6 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "By following the yellow brick road. Off a cliff.",
     "Slowly. Painfully. Slowly.",
     "By turning upside down.",
-  ],
-  how much:[
-    "420",
   ],
   when: [
     "On Tuesdays. Only Tuesdays.",

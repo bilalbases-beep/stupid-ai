@@ -253,6 +253,8 @@ const detectCategory = (question: string): QuestionCategory => {
   if (lower.startsWith("how")) return "how";
   if (lower.startsWith("when")) return "when";
   if (lower.startsWith("why")) return "why";
+  if (lower.startsWith("nice")) return "nice";
+  if (lower.startsWith("amazing")) return "amazing";
   return "general";
 };
 

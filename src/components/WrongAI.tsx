@@ -25,6 +25,25 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "A very important person who shall not be named.",
     "It was me. I did it.",
     "The one who asked the question.",
+    "Kungfu Panda.",
+    "Donkey.",
+    "Monkey.",
+    "A Dog.",
+    "God only knows.",
+    "Inner me.",
+    "Karees.",
+    "Chintu.",
+    "Dandanaka Domy",
+    "Bajak Bajak Vaanjinadhan.",
+    "Loky.",
+    "You.. it was you.. Dumb head.",
+    "Einstein.",
+    "Charlie Chaplin.",
+    "Donald Duck.",
+    "Mickey Mouse.",
+    "Tom and Jerry.",
+    "Bluey.",
+    "True.",
     "Pandu",
     "Laziest person on the world",
     "A ghost. Don't ask follow-ups.",
@@ -43,6 +62,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "A rumor that started itself.",
   ],
   where: [
+    "Far Far Away.",
     "In a parallel universe.",
     "At the bottom of the ocean. With a umbrella.",
     "Behind you. No, don't turn around.",
@@ -198,7 +218,7 @@ const StupidAI = () => {
     }
 
    if (question.trim().toLowerCase() === "Stupid") {
-      return "Yes, Here I am.";
+      return "Yes, I am stupid.";
     }
     const category = detectCategory(question);
     const pool = categorizedAnswers[category];

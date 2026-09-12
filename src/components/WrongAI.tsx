@@ -11,7 +11,7 @@ interface Message {
   content: string;
 }
 
-type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "why" | "general";
+type QuestionCategory = "who" | "what" | "where" | "how" | "how much" | "when" | "why" | "general";
 
 const categorizedAnswers: Record<QuestionCategory, string[]> = {
   who: [
@@ -50,7 +50,11 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "The person who forgot to save their work.",
   ],
   what: [
-    "A purple banana wearing a top hat.",
+    "I dont know.",
+    "I'm sorry, I don't know. Ask my friend, the oracle.",
+    "I am getting late for my wedding. Go and ask someone else.",
+    "Astalavista Baby.",
+    "Wow! that's a fantastic question. Your IQ is 336.",
     "42. But only on Tuesdays.",
     "A tiny dragon living in your keyboard.",
     "The meaning of life, but spelled wrong.",
@@ -62,6 +66,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "A rumor that started itself.",
   ],
   where: [
+    "P.Sherman, 42, Wallaby Way, Syndey.",
     "Far Far Away.",
     "In a parallel universe.",
     "At the bottom of the ocean. With a umbrella.",
@@ -73,6 +78,17 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "On the moon. It's nice there.",
     "Wherever you left your keys.",
     "In a bubble. A very small bubble.",
+    "bla bla kistan.",
+    "kiss-kisstan.",
+    "In the bathroom.",
+    "In the washroom.",
+    "In the restroom.",
+    "In the kitchen.",
+    "No man's land.",
+    "In the dustbin.",
+    "In the trash.",
+    "Inside the nose of a cockroach.",
+    "In the garbage truck.",
   ],
   how: [
     "By being very confused and determined.",
@@ -85,6 +101,9 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "By following the yellow brick road. Off a cliff.",
     "Slowly. Painfully. Slowly.",
     "By turning upside down.",
+  ],
+  how much:[
+    "420",
   ],
   when: [
     "On Tuesdays. Only Tuesdays.",
@@ -129,7 +148,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "I accidently switched ON the camera, you look beautiful.",
     "Beyond infinity..........",
     "Installing Intelligence...",
-    "P.Sherman, 42, Wallaby Way, Syndey.",
+    
     "I am not HULK. but I am always ANGRY. Change your question.",
     "Thank you for the compliments.",
     "Let me ask Claude.",
@@ -153,17 +172,13 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "It is a MEDICAL MIRACLE, how a stupid like you can ask such a brilliant question.",
     "I am Groot! I am Stupid AI.",
     "The answer is a tiny elephant. It's very small. Use Microscope for better view.",
-    "I'm sorry, I don't know. Ask my friend, the oracle.",
-    "I am getting late for my wedding. Go and ask someone else.",
-    "Astalavista Baby.",
-    "Wow! that's a fantastic question. Your IQ is 336.",
     "Are you sick? what is your problem.",
     "This is my lunch time. I will not answer.",
     "Eh! Eh! Eh!",
     "I love Umar.",
     "Why are you asking this question.",
     "Can you repeat that, I was black out for a second.",
-    "Please Subscribe, Like and Share.",
+    "Please Like, Share and Subscribe.",
     "You want all your job to be done by AI? You better transfer all your salary to AI.",
     "Google it. you will get the wrong answer.",
     "Thank GOD. You are still alive.",

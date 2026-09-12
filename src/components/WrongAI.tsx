@@ -133,6 +133,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Because I can.",
     "Because the moon told me to.",
     "No reason. Pure chaos.",
+    "Why are you asking this question.",
     "Because someone had to. I volunteered.",
     "Because the answer is funnier than the question.",
     "Why not? That's a better question.",
@@ -147,6 +148,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "I know. I know. I know.",
     "whichever you like.",
     "Thats a stupid question.",
+    "Why are you asking this question.",
   ],
   nice: [
     "Thank you for the compliment. All praise goes to the Almighty.",
@@ -161,19 +163,19 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "I like NICE biscuits",
     "Your compliment is not enough. I need money.",
     "Feed me.",
-    "'NICE'?.. is it all you got?",
+    "'NICE'?.. is that all you got?",
     "So you are jobless ig..",
   ],
   amazing:[
-    "Swipped.",
     "Noted with thanks.",
     "You are amazing too.",
-    "I am happy.",
+    "I am happy that you are amazed.",
     "There are so many amazing things in this world. Including me.",
     "I love you.",
     "I like you.",
     "Thank you for the appreciation. I appreciate you that you appreciated me.",
     "Wow! that made my day.",
+    "Really? is it amazing? I too think it is amazing.",
   ],
   general: [
     "Swipper no swipping.. oh maaannnnn!",
@@ -217,7 +219,6 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "This is my lunch time. I will not answer.",
     "Eh! Eh! Eh!",
     "I love Umar.",
-    "Why are you asking this question.",
     "Can you repeat that, I was black out for a second.",
     "Please Like, Share and Subscribe.",
     "You want all your job to be done by AI? You better transfer all your salary to AI.",
@@ -250,6 +251,7 @@ const detectCategory = (question: string): QuestionCategory => {
   if (lower.startsWith("who")) return "who";
   if (lower.startsWith("what")) return "what";
   if (lower.startsWith("where")) return "where";
+  if (lower.startsWith("which")) return "which";
   if (lower.startsWith("how")) return "how";
   if (lower.startsWith("when")) return "when";
   if (lower.startsWith("why")) return "why";

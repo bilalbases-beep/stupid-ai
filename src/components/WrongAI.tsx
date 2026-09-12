@@ -16,13 +16,17 @@ type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "why" | "gen
 const categorizedAnswers: Record<QuestionCategory, string[]> = {
   who: [
     "That's a secret only I know.",
-    "The answer is your mother.",
-    "Nobody. The question itself is the real winner.",
-    "I think it's that guy from the corner store.",
+    "Narendra Modi.",
+    "I think it is Jackie Chan",
+    "Donald Trump.",
+    "The answer is your grandma.",
+    "Nobody.",
+    "I think it's that guy from the corner store. Ramu Kaka",
     "A very important person who shall not be named.",
     "It was me. I did it.",
     "The one who asked the question.",
-    "My grandmother. She's very proud.",
+    "Pandu",
+    "Laziest person on the world",
     "A ghost. Don't ask follow-ups.",
     "The person who forgot to save their work.",
   ],
@@ -116,9 +120,6 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "I think you're brain have stopped braining.",
     "The actual thing is either this or that. if it is this, then it will not be that. if it is that, then it will not be this. I hope you understood. which type of answers do you prefer. this or that?",
     "Let me ask Gemini.",
-    "Narendra Modi.",
-    "I think it is Jackie Chan",
-    "Donald Trump.",
     "Are your fingers freezing? why so many spelling mistake in your question?",
     "Let me discuss this with Nolan. He will make movie on this.",
     "The answer is a secret, and I forgot the secret.",
@@ -192,6 +193,13 @@ const StupidAI = () => {
       return "I am groot! I am Stupid AI!";
     }
 
+   if (question.trim().toLowerCase() === "are you stupid") {
+      return "That's my first name";
+    }
+
+   if (question.trim().toLowerCase() === "Stupid") {
+      return "Yes, Here I am.";
+    }
     const category = detectCategory(question);
     const pool = categorizedAnswers[category];
     const available = pool.filter((a) => !usedAnswersRef.current.has(a));

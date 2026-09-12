@@ -29,6 +29,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Donkey.",
     "Monkey.",
     "A Dog.",
+    "A poisnous snake.",
     "God only knows.",
     "Inner me.",
     "Karees.",

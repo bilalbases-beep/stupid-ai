@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Bot, User, Trash2 } from "lucide-react";
 
 interface Message {
@@ -139,7 +138,7 @@ const StupidAI = () => {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, isLoading]);
 
   useEffect(() => {
     focusInput();
@@ -156,7 +155,7 @@ const StupidAI = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <ScrollArea className="h-[400px] w-full p-4" ref={scrollAreaRef}>
+          <div className="h-[400px] w-full overflow-y-auto p-4" ref={scrollAreaRef}>
             <div className="flex flex-col gap-4">
               {messages.map((msg, idx) => (
                 <div
@@ -199,7 +198,7 @@ const StupidAI = () => {
                 </div>
               )}
             </div>
-          </ScrollArea>
+          </div>
         </CardContent>
         <CardFooter className="border-t p-4">
           <div className="flex w-full gap-2">

@@ -188,13 +188,17 @@ const StupidAI = () => {
   const usedAnswersRef = useRef<Set<string>>(new Set());
 
   const generateWrongAnswer = (question: string): string => {
+    if (question.trim().toLowerCase() === "what is your name") {
+      return "I am groot! I am Stupid AI!";
+    }
+
     const category = detectCategory(question);
     const pool = categorizedAnswers[category];
     const available = pool.filter((a) => !usedAnswersRef.current.has(a));
 
     if (available.length === 0) {
-          pool.forEach((a) => usedAnswersRef.current.delete(a));
-        }
+      pool.forEach((a) => usedAnswersRef.current.delete(a));
+    }
 
     const finalPool = available.length > 0 ? available : pool;
     const answer = finalPool[Math.floor(Math.random() * finalPool.length)];

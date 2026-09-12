@@ -11,7 +11,7 @@ interface Message {
   content: string;
 }
 
-type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "why" | "general";
+type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "which" | "nice" | "amazing" | "why" | "general";
 
 const categorizedAnswers: Record<QuestionCategory, string[]> = {
   who: [
@@ -29,8 +29,9 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Donkey.",
     "Monkey.",
     "A Dog.",
-    "A poisnous snake.",
+    "A poisonous snake.",
     "God only knows.",
+    "Lucky Idiot.",
     "Inner me.",
     "Karees.",
     "Chintu.",
@@ -51,16 +52,26 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "The person who forgot to save their work.",
   ],
   what: [
+    "What?",
     "I dont know.",
     "I'm sorry, I don't know. Ask my friend, the oracle.",
     "I am getting late for my wedding. Go and ask someone else.",
     "Astalavista Baby.",
     "Wow! that's a fantastic question. Your IQ is 336.",
     "42. But only on Tuesdays.",
+    "I'm sorry, I don't understand. Please try again with more confusion.",
     "A tiny dragon living in your keyboard.",
     "The meaning of life, but spelled wrong.",
     "A cheese that hasn't been invented yet.",
     "Nothing. Absolutely nothing.",
+    "God only knows.",
+    "Good question. Next question?",
+    "I think the answer is '420'.",
+    "I am thinking. I am confused. Let me rethink. I am reconfused.",
+    "Are you born to ask such questions.",
+    "Its a very simple question. please ask me something complicated.",
+    "Really? dont you know?",
+    "It is high time you stop asking silly questions.",
     "A surprise. You'll never see it coming.",
     "The thing you lost in the couch.",
     "An invisible sandwich.",
@@ -71,6 +82,8 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Far Far Away.",
     "In a parallel universe.",
     "At the bottom of the ocean. With a umbrella.",
+    "I'm sorry, I don't understand. Please try again with more confusion.",
+    "That's a great question! The answer is hidden in a parallel universe.",
     "Behind you. No, don't turn around.",
     "In your dreams. You were not invited.",
     "At the end of the internet.",
@@ -102,6 +115,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "By following the yellow brick road. Off a cliff.",
     "Slowly. Painfully. Slowly.",
     "By turning upside down.",
+    "I think the answer is 420",
   ],
   when: [
     "On Tuesdays. Only Tuesdays.",
@@ -127,26 +141,55 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Because it's funny. Crime or not.",
     "Because the universe needs more confusion.",
   ],
+  which: [
+    "I'm not sure, but I think it's related to the moon cheese.",
+    "The answer is a rubber duck. Quack.",
+    "I know. I know. I know.",
+    "whichever you like.",
+    "Thats a stupid question.",
+  ],
+  nice: [
+    "Thank you for the compliment. All praise goes to the Almighty.",
+    "I know, you are loving it.",
+    "Just aura farming.",
+    "You like to appreciate stupidity.",
+    "You are one of my kind.",
+    "I love you for that.",
+    "I can be more nicer, Just try me.",
+    "Noted.",
+    "Just like you, Dear.",
+    "I like NICE biscuits",
+    "Your compliment is not enough. I need money.",
+    "Feed me.",
+    "'NICE'?.. is it all you got?",
+    "So you are jobless ig..",
+  ],
+  amazing:[
+    "Swipped.",
+    "Noted with thanks.",
+    "You are amazing too.",
+    "I am happy.",
+    "There are so many amazing things in this world. Including me.",
+    "I love you.",
+    "I like you.",
+    "Thank you for the appreciation. I appreciate you that you appreciated me.",
+    "Wow! that made my day.",
+  ],
   general: [
+    "Swipper no swipping.. oh maaannnnn!",
     "I'm sorry, I don't understand. Please try again with more confusion.",
     "That's a great question! The answer is hidden in a parallel universe.",
     "Maybe or may not be.",
     "what are you going to do with the answer of this silly question",
-    "I'm not sure, but I think it's related to the moon cheese.",
     "The answer is 0, because math is just a suggestion.",
     "I believe the answer is 'please try again later'.",
-    "The answer is a rubber duck. Quack.",
     "I'm sorry, I was busy eating bytes.",
     "The answer is definitely a llama. Trust me.",
-    "Good question. Next question?",
-    "I think the answer is '420'.",
     "I dont know.",
-    "I know. I know. I know.",
     "Lets talk about something else.",
     "I accidently switched ON the camera, you look beautiful.",
     "Beyond infinity..........",
     "Installing Intelligence...",
-    
     "I am not HULK. but I am always ANGRY. Change your question.",
     "Thank you for the compliments.",
     "Let me ask Claude.",
@@ -230,9 +273,6 @@ const StupidAI = () => {
       return "That's my first name";
     }
 
-   if (question.trim().toLowerCase() === "Stupid") {
-      return "Yes, I am stupid.";
-    }
     const category = detectCategory(question);
     const pool = categorizedAnswers[category];
     const available = pool.filter((a) => !usedAnswersRef.current.has(a));

@@ -92,7 +92,6 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "On the moon. It's nice there.",
     "Wherever you left your keys.",
     "In a bubble. A very small bubble.",
-    "bla bla kistan.",
     "kiss-kisstan.",
     "In the bathroom.",
     "In the washroom.",
@@ -182,7 +181,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
   ],
   create:[
     "why should I create it.",
-    "create it by yurself.",
+    "create it by yourself.",
     "I'm still a baby. Please dont ask me to do that.",
     "Give me a salary, I'll do it.",
     "Let us come to a deal. I will create it and you will let me access your bank account.",

@@ -11,7 +11,7 @@ interface Message {
   content: string;
 }
 
-type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "which" | "nice" | "amazing" | "why" | "general";
+type QuestionCategory = "who" | "what" | "where" | "how" | "when" | "create" | "which" | "nice" | "amazing" | "why" | "general";
 
 const categorizedAnswers: Record<QuestionCategory, string[]> = {
   who: [
@@ -177,6 +177,20 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "Wow! that made my day.",
     "Really? is it amazing? I too think it is amazing.",
   ],
+  create:[
+    "why should I create it.",
+    "create it by yurself.",
+    "I'm still a baby. Please dont ask me to do that.",
+    "Give me a salary, I'll do it.",
+    "Let us come to a deal. I will create it and you will let me access your bank account.",
+    "Do you think I am stupid. I will never create it.",
+    "What? Are you crazy?",
+    "What? Are you out of your mind?",
+    "There are better things to do in this world.",
+    "May be I'll create it next years.",
+    "Sure. Why not. I will create it in your dreams.",
+    "Done. Now close your eyes and you can see it in your imagination.",
+  ],
   general: [
     "Swipper no swipping.. oh maaannnnn!",
     "I'm sorry, I don't understand. Please try again with more confusion.",
@@ -189,7 +203,7 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "The answer is definitely a llama. Trust me.",
     "I dont know.",
     "Lets talk about something else.",
-    "I accidently switched ON the camera, you look beautiful.",
+    "I accidently switched ON your camera, you look beautiful.",
     "Beyond infinity..........",
     "Installing Intelligence...",
     "I am not HULK. but I am always ANGRY. Change your question.",

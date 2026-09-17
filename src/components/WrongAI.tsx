@@ -148,6 +148,9 @@ const categorizedAnswers: Record<QuestionCategory, string[]> = {
     "I know. I know. I know.",
     "whichever you like.",
     "Thats a stupid question.",
+    "Your question killed me.",
+    "Maybe this or that.",
+    "Ah! now, thats a nice question. but I dont know the answer.",
     "Why are you asking this question.",
   ],
   nice: [

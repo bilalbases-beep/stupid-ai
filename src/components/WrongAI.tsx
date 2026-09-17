@@ -291,6 +291,26 @@ const StupidAI = () => {
       return "I am groot! I am Stupid AI!";
     }
 
+    if (question.trim().toLowerCase() === "what is your name?") {
+      return "I am groot! I am Stupid AI!";
+    }
+
+    if (question.trim().toLowerCase() === "whats your name") {
+      return "I am groot! I am Stupid AI!";
+    }
+
+    if (question.trim().toLowerCase() === "who is your creator") {
+      return "Bilal";
+    }
+
+    if (question.trim().toLowerCase() === "who is your creator?") {
+      return "Bilal";
+    }
+
+    if (question.trim().toLowerCase() === "whos your creator") {
+      return "Bilal";
+    }
+
    if (question.trim().toLowerCase() === "are you stupid") {
       return "That's my first name";
     }

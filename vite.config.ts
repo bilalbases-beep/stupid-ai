@@ -8,6 +8,7 @@ export default defineConfig(() => ({
     host: "::",
     port: 8080,
   },
+  base: '/stupid_ai/',
   plugins: [dyadComponentTagger(), react()],
   resolve: {
     alias: {

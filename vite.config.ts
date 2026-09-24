@@ -12,7 +12,7 @@ export default defineConfig(() => ({
   plugins: [dyadComponentTagger(), react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./"),
     },
   },
 }));

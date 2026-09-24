@@ -1,0 +1,1 @@
+<BrowserRouter basename="/stupid-ai">

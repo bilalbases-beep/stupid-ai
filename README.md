@@ -1,1 +1,2 @@
-# Welcome to your Dyad app
+# Stupid ai - Developed by Bilal
+# Only wrong answers
